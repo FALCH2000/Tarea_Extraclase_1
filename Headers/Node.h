@@ -6,21 +6,19 @@
 #define TAREA_EXTRACLASE_1_NODE_H
 
 #include <vector>
+#include <iostream>
+
+using namespace std;
 
 using namespace std;
 
 class Node {
 
 public:
-    int id=0; //this is the identification of each node that we create
-    vector<int> connections; // this saves all the connection that has a node when we create an edge
-
-private:vector<int> Nodes;
-
-public:
+    int id;//this is the identification of each node that we create
+    vector<Node> connections; // this saves all the connection that has a node when we create an edge
     Node(int id);
-
-    int getNode(int id);
+    void getConnections();
 };
 
 
