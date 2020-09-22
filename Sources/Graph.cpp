@@ -9,7 +9,8 @@ Graph::Graph(){
 }
 
 Node* Graph::getNode(int id) {
-    Node *returnNode= &NodesList.at(id-1); //Asign the node in the position (id-1) in this variable.
+
+    Node *returnNode= &NodesList[id-1]; //Asign the node in the position (id-1) in this variable.
     return returnNode;
 }
 
@@ -26,7 +27,10 @@ void Graph::connectNodes(int origin, int destiny, int distance){
     Node* originPtr= getNode(origin);
     Node* destinyPtr= getNode(destiny);
 
+    Edge* distancePtr= new Edge(originPtr, destinyPtr, distance);
+
     originPtr->connections.push_back(*destinyPtr);
+    originPtr->edges.push_back(*distancePtr);
 
 
 }

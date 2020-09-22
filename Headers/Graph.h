@@ -5,11 +5,14 @@
 #ifndef TAREA_EXTRACLASE_1_GRAPH_H
 #define TAREA_EXTRACLASE_1_GRAPH_H
 
+#include <vector>
 #include "Node.h"
 #include "Edge.h"
 #include <iostream>
 
 using namespace std;
+
+class Node;
 /**
  * Class of the graph to create.
  *

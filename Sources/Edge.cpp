@@ -3,3 +3,12 @@
 //
 
 #include "../Headers/Edge.h"
+
+Edge::Edge(Node* origin, Node* destiny, int distance){
+    this->distance= distance;
+    this->origin= origin;
+    this->destiny= destiny;
+}
+void Edge::getEdges(){
+
+}
