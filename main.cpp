@@ -19,7 +19,7 @@ int main() {
     myGraph->connectNodes(1,2,8);
     myGraph->connectNodes(1,4,5);
 
-    //getting information od the node 3
+    //getting information of the node 3
     Node* ptr= myGraph->getNode(3);
     ptr->getConnections();
     ptr->getEdges();
