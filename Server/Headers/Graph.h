@@ -28,6 +28,8 @@ public:
     void addNode();
     void connectNodes(int origin, int destiny, int distance);
     void listNodes();
+    int getSizeNodes();
+    int getDistances(int origin, int destiny);
 };
 
 

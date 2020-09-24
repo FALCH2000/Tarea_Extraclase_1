@@ -51,3 +51,19 @@ void Graph::listNodes() {
 
     cout<< " ]" << endl;
 }
+int Graph::getSizeNodes(){
+    return _sizeNodes;
+}
+
+int Graph::getDistances(int origin, int destiny){
+    Node* originPtr= getNode(origin);
+    Node* destinyPtr= getNode(destiny);
+
+    for(int i=0; i<originPtr->connections.size();i++){
+        if(destinyPtr==originPtr->edges[i].destiny){
+            return originPtr->edges[i].distance;
+        }else{
+            return 0;
+        }
+    }
+}

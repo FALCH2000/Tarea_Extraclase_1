@@ -18,7 +18,10 @@ public:
     Floyd_Wharsall(int origin, int destiny, Graph* myGraph);
 
 private:
+    vector<vector<int>> Distances; //saves distances from a node to another node
+    vector<vector<Node*>> Routes; //save the route to arrive to another node
     void shortestRoot();
+    void fillMatrices();
 };
 
 
