@@ -1,10 +1,15 @@
 #include <iostream>
 #include "Headers/Node.h"
 #include "Headers/Graph.h"
+#include "Headers/Floyd_Wharsall.h"
+#include "Headers/Server.h"
 
 using namespace std;
 
 int main() {
+
+
+    /****************************CREATES A GRAPH AND NODES INTO IT*************************
     Graph *myGraph= new Graph();
     for(int i=6; i >0; i--){
         myGraph->addNode();
@@ -28,7 +33,13 @@ int main() {
     Node* ptr1= myGraph->getNode(1);
     ptr1->getConnections();
     ptr1->getEdges();
+    */
 
+    //Has to make it work_____ NOT YET___________
+    //Floyd_Wharsall(3,2,myGraph);
+
+    Server* myServer= new Server;
+    myServer->activateServer();
 
 
     return 0;
