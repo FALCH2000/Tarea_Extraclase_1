@@ -33,7 +33,7 @@ int Client::activateClient(){
         return 0;
 }
 
-void Client::sendMessage(string message){
+string Client::sendMessage(string message){
     hello= message.c_str();
     cout<<"yeas"<<endl;
     send(sock , hello , strlen(hello) , 0 );
@@ -41,6 +41,7 @@ void Client::sendMessage(string message){
     printf("Hello message sent\n");
     valread = read( sock , buffer, 1024);
     printf("%s\n",buffer );
-    cout<<" wes"<<endl;
+    string returnMessage= buffer;
+    return returnMessage;
 }
 

@@ -17,6 +17,7 @@
 #include <QtWidgets/QMenuBar>
 #include <QtWidgets/QPushButton>
 #include <QtWidgets/QStatusBar>
+#include <QtWidgets/QTextEdit>
 #include <QtWidgets/QWidget>
 
 QT_BEGIN_NAMESPACE
@@ -28,11 +29,12 @@ public:
     QLabel *label;
     QLabel *label_2;
     QLabel *label_3;
-    QLabel *label_4;
-    QLabel *label_5;
+    QLabel *Origin_Label;
+    QLabel *Destiny_Label;
     QPushButton *pushButton;
     QLineEdit *lineEdit;
     QLineEdit *lineEdit_2;
+    QTextEdit *textEdit;
     QMenuBar *menubar;
     QStatusBar *statusbar;
 
@@ -133,12 +135,12 @@ public:
         label_3 = new QLabel(centralwidget);
         label_3->setObjectName(QString::fromUtf8("label_3"));
         label_3->setGeometry(QRect(190, 140, 461, 41));
-        label_4 = new QLabel(centralwidget);
-        label_4->setObjectName(QString::fromUtf8("label_4"));
-        label_4->setGeometry(QRect(280, 210, 91, 16));
-        label_5 = new QLabel(centralwidget);
-        label_5->setObjectName(QString::fromUtf8("label_5"));
-        label_5->setGeometry(QRect(460, 210, 91, 16));
+        Origin_Label = new QLabel(centralwidget);
+        Origin_Label->setObjectName(QString::fromUtf8("Origin_Label"));
+        Origin_Label->setGeometry(QRect(280, 210, 91, 16));
+        Destiny_Label = new QLabel(centralwidget);
+        Destiny_Label->setObjectName(QString::fromUtf8("Destiny_Label"));
+        Destiny_Label->setGeometry(QRect(460, 210, 91, 16));
         pushButton = new QPushButton(centralwidget);
         pushButton->setObjectName(QString::fromUtf8("pushButton"));
         pushButton->setGeometry(QRect(380, 290, 80, 24));
@@ -343,6 +345,13 @@ public:
         lineEdit_2->setPalette(palette3);
         lineEdit_2->setFont(font2);
         lineEdit_2->setAlignment(Qt::AlignCenter);
+        textEdit = new QTextEdit(centralwidget);
+        textEdit->setObjectName(QString::fromUtf8("textEdit"));
+        textEdit->setGeometry(QRect(303, 349, 241, 101));
+        QFont font3;
+        font3.setFamily(QString::fromUtf8("Ubuntu Mono"));
+        font3.setPointSize(13);
+        textEdit->setFont(font3);
         MainWindow->setCentralWidget(centralwidget);
         menubar = new QMenuBar(MainWindow);
         menubar->setObjectName(QString::fromUtf8("menubar"));
@@ -363,8 +372,8 @@ public:
         label->setText(QApplication::translate("MainWindow", "Camino m\303\241s corto", nullptr));
         label_2->setText(QApplication::translate("MainWindow", "Algoritmo Floyd-Warshall", nullptr));
         label_3->setText(QApplication::translate("MainWindow", "Elija los nodos los cuales quiera saber cual es el camino m\303\241s corto entre ellos", nullptr));
-        label_4->setText(QApplication::translate("MainWindow", "Nodo Origen", nullptr));
-        label_5->setText(QApplication::translate("MainWindow", "Nodo Destino", nullptr));
+        Origin_Label->setText(QApplication::translate("MainWindow", "Nodo Origen", nullptr));
+        Destiny_Label->setText(QApplication::translate("MainWindow", "Nodo Destino", nullptr));
         pushButton->setText(QApplication::translate("MainWindow", "Listo", nullptr));
     } // retranslateUi
 

@@ -20,7 +20,7 @@ public:
     const char *hello = "Hello from client";
     char buffer[1024] = {0};
     int activateClient();
-    void sendMessage(string message);
+    string sendMessage(string message);
 };
 
 #endif // CLIENT_H

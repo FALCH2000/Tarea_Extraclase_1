@@ -26,13 +26,19 @@ void MainWindow::on_pushButton_clicked()
     QString nodeDestiny =ui->lineEdit_2->text();
     this->destinyNode= nodeDestiny.toUtf8().constData();
 
-    this->get_OD_Nodes();
+    string returnMessage= this->get_OD_Nodes();
+    string allMessage= "El camino más corto entre esos nodos es: \n"+returnMessage;
+
+    QString str = QString::fromUtf8(allMessage.c_str());
+    //
+    ui->textEdit->setText(str);
 }
 
 
 string MainWindow::get_OD_Nodes(){
-    string both= originNode+destinyNode;
+    string both= originNode+"-"+destinyNode;
     cout <<"both: "<< both;
-    myClient->sendMessage(both);
-    return both;
+    string returnMessage;
+    returnMessage= myClient->sendMessage(both);
+    return returnMessage;
 }
