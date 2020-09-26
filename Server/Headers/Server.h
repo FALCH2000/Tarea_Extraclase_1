@@ -26,9 +26,18 @@ public:
     int opt = 1;
     int addrlen = sizeof(address);
     char buffer[1024] = {0};
-    char hello[1000];
+    char hello[1000]; /**< Is the char of the message that will be send to the client. */
 
+    /**
+     * Starts the server work. Make the bind of the porter, then the listen, then the accept and go on.
+     * @param myGraph is the reference of the graph being worked on.
+     */
     void activateServer(Graph* myGraph);
+    /**
+     * Call the algorithm Floyd_Warshall once the listening has been accepted on the server.
+     * @param myGraph is the reference of the graph being worked on.
+     * @return the string of the Floyd_Warshall algorithm result;
+     */
     string get_Floyd_Warshall(Graph* myGraph);
 
 };
