@@ -62,8 +62,18 @@ int Graph::getDistances(int origin, int destiny){
     for(int i=0; i<originPtr->connections.size();i++){
         if(destinyPtr==originPtr->edges[i].destiny){
             return originPtr->edges[i].distance;
-        }else{
-            return 0;
         }
     }
+}
+
+bool Graph::isEdge(int origin, int destiny){
+    Node* originPtr= getNode(origin);
+    Node* destinyPtr= getNode(destiny);
+
+    for(int i=0;i< originPtr->connections.size();i++){
+        if(destiny==originPtr->connections[i].id){
+            return true;
+        }
+    }
+    return false;
 }

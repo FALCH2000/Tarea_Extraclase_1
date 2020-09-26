@@ -4,7 +4,7 @@
 
 #include "../Headers/Server.h"
 
-void Server::activateServer() {
+void Server::activateServer(Graph* myGraph) {
 
     // Creating socket file descriptor
     if ((server_fd = socket(AF_INET, SOCK_STREAM, 0)) == 0)
@@ -51,11 +51,37 @@ void Server::activateServer() {
         valread = read( new_socket , buffer, 1024);
         printf("%s\n",buffer );
 
-        cout << buffer << endl;
 
+        cout << buffer << endl;
+        string messageReturn=get_Floyd_Warshall(myGraph);
+        cout<<" no se sinceramente "<<endl;
+        strcpy(hello, messageReturn.c_str());
+        cout<<"ejfwejfwejfwefwe"<<endl;
         send(new_socket , hello , strlen(hello) , 0 );
         printf("Hello message sent\n");
     }
 
 
+}
+string Server::get_Floyd_Warshall(Graph* myGraph){
+
+    auto *FW= new Floyd_Wharsall();
+    FW->makeMatrix(myGraph->getSizeNodes());
+    vector<vector<int>> matrix;
+    matrix = FW->floyd_warshall(myGraph);
+
+    string message;
+    for (int i = 0; i < matrix.size(); i++) {
+        for (int j = 0; j < matrix.size(); j++) { //int(pow(10,9)
+            if(matrix[i][j] != int(pow(10,9)) && matrix[i][j] != 0){
+
+                //cout<< "Between node "<< i+1 << " and "<< j+1<< " the smallest distance is "<< matrix[i][j]<<endl;
+                message+= "\n entre " + to_string(i+1) + " y " + to_string(j+1) +
+                " distancia es" + to_string(matrix[i][j]);
+            }
+        }
+    }
+    cout << message << endl;
+
+    return message;
 }

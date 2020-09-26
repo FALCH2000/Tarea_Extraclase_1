@@ -8,20 +8,15 @@
 #include "Edge.h"
 #include "Node.h"
 #include <vector>
+#include <math.h>
 
 class Floyd_Wharsall {
 
-    Graph* myGraphPtr;
-    Node* originPtr;
-    Node* destinyPtr;
-public:
-    Floyd_Wharsall(int origin, int destiny, Graph* myGraph);
 
-private:
-    vector<vector<int>> Distances; //saves distances from a node to another node
-    vector<vector<Node*>> Routes; //save the route to arrive to another node
-    void shortestRoot();
-    void fillMatrices();
+public:
+    vector<vector<int>> makeMatrix(int nodes);
+
+    vector<vector<int>> floyd_warshall(Graph* myGraph);
 };
 
 

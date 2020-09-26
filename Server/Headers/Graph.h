@@ -30,6 +30,7 @@ public:
     void listNodes();
     int getSizeNodes();
     int getDistances(int origin, int destiny);
+    bool isEdge(int origin, int destiny);
 };
 
 

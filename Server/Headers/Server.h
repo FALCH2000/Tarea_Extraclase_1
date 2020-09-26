@@ -6,6 +6,9 @@
 #define TAREA_EXTRACLASE_1_SERVER_H
 
 #include <iostream>
+#include "Graph.h"
+#include "Floyd_Wharsall.h"
+
 // Server side C/C++ program to demonstrate Socket programming
 #include <unistd.h>
 #include <stdio.h>
@@ -23,9 +26,10 @@ public:
     int opt = 1;
     int addrlen = sizeof(address);
     char buffer[1024] = {0};
-    char *hello = "Hello from server";
+    char hello[1000];
 
-    void activateServer();
+    void activateServer(Graph* myGraph);
+    string get_Floyd_Warshall(Graph* myGraph);
 
 };
 
