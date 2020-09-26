@@ -76,8 +76,8 @@ string Server::get_Floyd_Warshall(Graph* myGraph){
             if(matrix[i][j] != int(pow(10,9)) && matrix[i][j] != 0){
 
                 //cout<< "Between node "<< i+1 << " and "<< j+1<< " the smallest distance is "<< matrix[i][j]<<endl;
-                message+= "\n entre " + to_string(i+1) + " y " + to_string(j+1) +
-                " distancia es" + to_string(matrix[i][j]);
+                message+= "\n Entre " + to_string(i+1) + " y " + to_string(j+1) +
+                " la distancia es " + to_string(matrix[i][j]);
             }
         }
     }
